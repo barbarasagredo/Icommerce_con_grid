@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+@import url(../css/style-guide.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "navbar navbar"
+    "aside main"
+    "footer footer";
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.fredoka-bold {
+  font-weight: 800;
+  font-size: larger;
+  color: var(--chicle);
+}
+
+h3 {
+  font-weight: 400;
+}
+
+.navbar {
+  grid-area: navbar;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border: 1px solid var(--esmeralda);
+  background-color: var(--light-bg);
+  color: var(--esmeralda);
+  width: 100%;
+  padding: 1em;
+}
+
+.nav-content {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+.nav-description {
+  font-weight: 400;
+}
+
+.aside {
+  grid-area: aside;
+  background-color: var(--light-bg);
+  display: flex;
+  flex-direction: column;
+  color: var(--esmeralda);
+  padding: 1em;
+}
+
+.aside-title {
+  font-size: medium;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.list-item {
+  font-size: small;
+  text-align: center;
+  margin: 0.6em;
+  list-style-type: none;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.list-item:hover {
+  transform: scale(1.1);
+}
+
+.main-cards {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  background-color: var(--light-bg);
+  overflow-y: auto;
+  height: 100%;
+  padding: 2em;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--esmeralda);
+  border-radius: 0.5em;
+  overflow: hidden;
+  min-height: 20em;
+}
+
+.img-wrapper {
+  flex: 0 0 65%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  max-height: 65%;
+}
+
+.card-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.card-info {
+  flex: 1;
+  padding: 1em;
+  text-align: center;
+  color: var(--esmeralda);
+  overflow: hidden;
+}
+
+.card-info h3 {
+  font-size: 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.buy-button {
+  background-color: var(--chicle);
+  text-align: center;
+  width: 100%;
+  color: white;
+  border: none;
+  font-weight: 500;
+  padding: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  flex-shrink: 0;
+}
+
+.buy-button:hover {
+  background-color: white;
+  color: var(--chicle);
+  border-top: 1px solid var(--esmeralda);
+}
+
+.footer {
+  grid-area: footer;
+  background-color: var(--esmeralda);
+  color: white;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 1em;
+  gap: 1em;
+}
