@@ -13,7 +13,7 @@
 html,
 body {
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .grid-container {
@@ -66,7 +66,7 @@ h3 {
   display: flex;
   flex-direction: column;
   color: var(--esmeralda);
-  padding: 1em;
+  padding: 1em 0.5em;
 }
 
 .aside-title {
@@ -93,11 +93,13 @@ h3 {
   grid-area: main;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2em;
   background-color: var(--light-bg);
   overflow-y: auto;
   height: 100%;
-  padding: 2em;
+  padding: 1em;
+  width: -webkit-fill-available;
 }
 
 .card {
